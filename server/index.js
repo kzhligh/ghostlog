@@ -16,19 +16,20 @@ app.get("/items", (req, res) => {
 //this posts one item
 app.post("/items", (req, res) => {
   items.push(req.body);
-  //res.redirect("/items");
+  res.redirect("/items");
 });
 
 //problem CURRENTLY my delete deletes ALL if i click oon the last item
 app.delete("/items/:id", (req, res) => {
-  // items = items.filter((item) => {
-  //   return item.id !== req.params.id;
-  // });
-
   const indexOfObj = items.findIndex((object) => {
     return object.id === req.params.id;
   });
   items.splice(indexOfObj, 1);
+  res.redirect("/items");
+});
+
+app.get("/history", (req, res) => {
+  res.send("hi");
 });
 
 app.listen(port, () => {

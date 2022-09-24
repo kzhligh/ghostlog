@@ -5,8 +5,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ToDoItem from "./components/ToDoItem";
 import { v1 as uuidv1 } from "uuid";
+import Warning from "./components/Warning";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import History from "./components/History";
 
 function App() {
+  const [warning, setWarning] = useState(false);
   const [itemList, setNewItemList] = useState([]);
   const [newItem, setNewItem] = useState({
     id: null,
@@ -52,7 +56,7 @@ function App() {
     });
   }
 
-  //THIS DELETE CODE MESSES SOMETHING UP ISTG,
+  //need a redirect on the other side
   function handleDelete(id) {
     fetch(`/items/${id}`, {
       method: "DELETE",
@@ -69,8 +73,10 @@ function App() {
 
   function handleSubmit() {
     if (newItem.content === "") {
+      setWarning(true);
       return;
     } else {
+      setWarning(false);
       setNewItemList((prevValue) => {
         return [...prevValue, newItem];
       });
@@ -84,10 +90,23 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/history" component={History} />
+        </Switch>
+      </Router>
+      {/* <a href="/history">history</a> */}
       <form>
-        <input type="text" onChange={handleChange} value={newItem.content} />
+        <input
+          type="text"
+          onChange={handleChange}
+          placeholder="Enter something"
+          value={newItem.content}
+        />
         <Button onClick={handleSubmit}>Add</Button>
       </form>
+
+      {warning ? <Warning /> : null}
 
       {itemList.map((item) => {
         return (
