@@ -38,6 +38,16 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/calculator">
+              Calculators
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/macros">
+              Macros
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/todolist">
               To-Do List
             </Link>

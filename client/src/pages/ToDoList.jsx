@@ -127,13 +127,6 @@ export default function ToDoList() {
         <button className="btn btn-primary" onClick={handleSubmit}>
           Add
         </button>
-        {/* <input
-          type="text"
-          onChange={handleChange}
-          placeholder="Enter something"
-          value={newItem.content}
-        />
-        <Button onClick={handleSubmit}>Add</Button> */}
       </form>
 
       {warning ? <Warning /> : null}
