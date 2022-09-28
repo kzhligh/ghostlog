@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Warning() {
+export default function Warning(props) {
   return (
     <div
       className="mb-0"
@@ -10,6 +10,15 @@ export default function Warning() {
       }}
     >
       Please enter something
+      <button
+        type="button"
+        class="btn btn-light btn-sm"
+        onClick={() => {
+          props.onClose();
+        }}
+      >
+        X
+      </button>
     </div>
   );
 }

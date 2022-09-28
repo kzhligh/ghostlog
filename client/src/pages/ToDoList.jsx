@@ -107,6 +107,10 @@ export default function ToDoList() {
     }
   }
 
+  function closeWarning() {
+    setWarning(false);
+  }
+
   return (
     <div className="App">
       <form>
@@ -129,7 +133,7 @@ export default function ToDoList() {
         </button>
       </form>
 
-      {warning ? <Warning /> : null}
+      <div>{warning ? <Warning onClose={closeWarning} /> : null}</div>
 
       <div className="todofield">
         {itemList.map((item) => {
