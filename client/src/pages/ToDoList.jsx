@@ -133,7 +133,11 @@ export default function ToDoList() {
         </button>
       </form>
 
-      <div>{warning ? <Warning onClose={closeWarning} /> : null}</div>
+      <div>
+        {warning ? (
+          <Warning phrase="Please enter something" onClose={closeWarning} />
+        ) : null}
+      </div>
 
       <div className="todofield">
         {itemList.map((item) => {

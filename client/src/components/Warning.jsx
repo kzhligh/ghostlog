@@ -9,10 +9,10 @@ export default function Warning(props) {
         backgroundColor: "#ff80ff",
       }}
     >
-      Please enter something
+      {props.phrase}
       <button
         type="button"
-        class="btn btn-light btn-sm"
+        className="btn btn-light btn-sm"
         onClick={() => {
           props.onClose();
         }}

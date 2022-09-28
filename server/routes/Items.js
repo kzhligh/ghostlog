@@ -37,9 +37,6 @@ router.get("/", (req, res) => {
     } else {
       //mongoose.connection.close();
       const itemsArray = [];
-
-      console.log("items are: ", items);
-
       items.forEach((item) => {
         itemsArray.push({ id: item.id, content: item.content });
       });
