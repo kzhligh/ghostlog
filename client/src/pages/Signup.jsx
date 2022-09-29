@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Input from "../components/Input";
 import Warning from "../components/Warning";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   let navigate = useNavigate();
@@ -47,7 +47,6 @@ export default function Signup() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          console.log("sheeeee");
           navigate("/");
         });
     }

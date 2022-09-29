@@ -8,21 +8,6 @@ app.use(bodyParser.json());
 
 const router = express.Router();
 
-mongoose.connect(
-  "mongodb://127.0.0.1:27017/itemsDB",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("successfully connected to mongo 127.0.0.1:27017");
-    }
-  }
-);
-
 const itemSchema = new mongoose.Schema({
   id: String,
   content: String,
@@ -59,7 +44,7 @@ router.post("/", (req, res) => {
       console.log("Successfully added: ", item);
     }
   });
-  res.redirect("/");
+  res.send({ message: "OK saved to database" });
 });
 
 router.delete("/:id", (req, res) => {
@@ -71,7 +56,7 @@ router.delete("/:id", (req, res) => {
       console.log("Successfully deleted: ", item);
     }
   });
-  res.redirect(200, "/");
+  res.send({ message: "OK deleted from database" });
 });
 
 module.exports = router;

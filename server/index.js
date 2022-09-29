@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -7,6 +8,21 @@ app.use(bodyParser.json());
 
 const port = 5000;
 const saltRound = 10;
+
+mongoose.connect(
+  "mongodb://127.0.0.1:27017/itemsDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("successfully connected to mongo 127.0.0.1:27017");
+    }
+  }
+);
 
 const historyRoute = require("./routes/History");
 const itemsRoute = require("./routes/Items");
