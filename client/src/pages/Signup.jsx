@@ -30,11 +30,13 @@ export default function Signup() {
   function handleSubmit(event) {
     // console.log(newUser.username, newUser.password);
     event.preventDefault();
-    if (newUser.password !== newUser.repassword) {
+    if (newUser.username === "") {
+      setWarning(true);
+    } else if (newUser.password !== newUser.repassword) {
       console.log("password not matching");
       setWarning(true);
     } else {
-      fetch("/signup", {
+      fetch("/users/signup", {
         method: "POST",
         body: JSON.stringify({
           username: newUser.username,
@@ -47,7 +49,8 @@ export default function Signup() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          navigate("/");
+          //NEED TOCHECK HERE IF WE GET SENT BACK SOME MESSAGE LIKE "username unavailable"
+          navigate("/", { state: { username: newUser.username } });
         });
     }
   }
@@ -78,7 +81,7 @@ export default function Signup() {
       />
       {warning ? (
         <Warning
-          phrase="Password mismatch, try again!"
+          phrase="Something is wrong, try again!"
           onClose={closeWarning}
         />
       ) : null}
