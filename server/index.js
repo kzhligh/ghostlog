@@ -28,8 +28,11 @@ const itemsRoute = require("./routes/Items");
 const macrosRoute = require("./routes/Macros");
 
 const postsRoute = require("./routes/Posts");
+const commentsRoute = require("./routes/Comments");
 
 app.use("/post", postsRoute);
+app.use("/comments", postsRoute);
+
 app.use("/history", historyRoute);
 app.use("/items", itemsRoute);
 app.use("/macros", macrosRoute);

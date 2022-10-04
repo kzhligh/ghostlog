@@ -48,7 +48,12 @@ export default function Reddit() {
       <Postbox />
       {postsArray.map((post) => {
         return (
-          <Post username={post.username} key={post.id} content={post.content} />
+          <Post
+            username={post.username}
+            key={post.id}
+            content={post.content}
+            id={post.id}
+          />
         );
       })}
     </div>
