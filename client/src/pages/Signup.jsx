@@ -49,7 +49,7 @@ export default function Signup() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          //NEED TOCHECK HERE IF WE GET SENT BACK SOME MESSAGE LIKE "username unavailable"
+          //!!!NEED TOCHECK HERE IF WE GET SENT BACK SOME MESSAGE LIKE "username unavailable"
           navigate("/", { state: { username: newUser.username } });
         });
     }

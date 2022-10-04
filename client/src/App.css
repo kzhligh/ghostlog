@@ -87,6 +87,35 @@ form input {
   font-weight: 300;
 }
 
+.postinput {
+  border: 1px solid #ff80ff;
+  background-color: #f0f8ff;
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  font-weight: 300;
+}
+
+textarea {
+  border: 1px solid #ff80ff;
+  background-color: #f0f8ff;
+  display: block;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 50px;
+  width: 1000px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  font-weight: 300;
+}
+
 form button {
   appearance: none;
   outline: 0;

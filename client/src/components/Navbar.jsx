@@ -52,6 +52,11 @@ function Navbar() {
               To-Do List
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/reddit">
+              Reddit
+            </Link>
+          </li>
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"

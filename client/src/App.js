@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Macros from "./pages/Macros";
 import Calculator from "./pages/Calculator";
+import Reddit from "./pages/Reddit";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/todolist" element={<ToDoList />} />
           <Route path="/macros" element={<Macros />} />
           <Route path="/calculator" element={<Calculator />} />
+          <Route path="/reddit" element={<Reddit />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
