@@ -8,6 +8,9 @@ export default function Comment(props) {
   const [showReplyCommentbox, setShowReplyCommentbox] = useState(false);
   const [buttonName, setButtonName] = useState("reply");
 
+  //we need an API get here that recursively gets ALL the children of comments...
+  //and somehow renders them
+
   function handleReplyClick(event) {
     event.preventDefault();
     if (buttonName === "reply") {
@@ -50,6 +53,9 @@ export default function Comment(props) {
         {buttonName}
       </button>
       {showReplyCommentbox ? <CommentReplyBox id={props.id} /> : null}
+
+      {/* somehow, we need to recurvisely call the displays the rest of the comments here...
+      perhaps it should be using  */}
     </div>
   );
 }

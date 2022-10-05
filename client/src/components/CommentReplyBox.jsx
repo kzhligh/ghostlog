@@ -14,7 +14,7 @@ export default function CommentReplyBox(props) {
 
   function apiPost() {
     console.log("THE ID IS ", props.id);
-    fetch(`/post/${props.id}/comments`, {
+    fetch(`/posts/${props.id}/comments`, {
       method: "POST",
       body: JSON.stringify({
         username: newComment.username,

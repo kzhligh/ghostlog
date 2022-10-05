@@ -30,7 +30,7 @@ const macrosRoute = require("./routes/Macros");
 const postsRoute = require("./routes/Posts");
 const commentsRoute = require("./routes/Comments");
 
-app.use("/post", postsRoute);
+app.use("/posts", postsRoute);
 app.use("/comments", postsRoute);
 
 app.use("/history", historyRoute);

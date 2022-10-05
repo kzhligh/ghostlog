@@ -8,7 +8,7 @@ export default function Postbox() {
   });
 
   function apiPost() {
-    fetch("/post/new", {
+    fetch("/posts", {
       method: "POST",
       body: JSON.stringify({
         username: newPost.username,

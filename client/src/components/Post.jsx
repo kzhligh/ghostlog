@@ -13,9 +13,10 @@ export default function Post(props) {
   useEffect(() => {
     apiGetComments();
   }, []);
+  //commentArray;
 
   function apiGetComments() {
-    fetch(`/post/${props.id}/comments`, {
+    fetch(`/posts/${props.id}/comments`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -32,6 +33,7 @@ export default function Post(props) {
           });
         });
         setCommentArray(newArray);
+        console.log("new array content, ", newArray);
       });
   }
 
