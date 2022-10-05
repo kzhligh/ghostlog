@@ -16,7 +16,7 @@ export default function Reddit() {
   function getApi() {
     // console.log("we here");
     // var responseClone;
-    fetch("/post/index", { method: "GET" })
+    fetch("/posts", { method: "GET" })
       .then((response) =>
         // responseClone = response.clone(); // 2
         response.json()

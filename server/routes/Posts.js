@@ -1,6 +1,6 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+const express = require("express"); //api framework
+const bodyParser = require("body-parser"); //parse incoming request bodies
+const mongoose = require("mongoose"); //odm
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -168,3 +168,5 @@ router.post("/:commentId/comments/new", (req, res) => {
 });
 
 module.exports = router;
+// module.exports = Comment;
+// module.exports = Post;

@@ -6,7 +6,8 @@
   "scripts": {
     "server": "node index.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "mocha --exit"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,9 @@
     "react-bootstrap": "^2.5.0"
   },
   "devDependencies": {
-    "concurrently": "^7.4.0"
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "concurrently": "^7.4.0",
+    "mocha": "^10.0.0"
   }
 }
